@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse  # Looks up a URL by the name in the urls.py file
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Post
 from .forms import CommentForm
 
@@ -54,9 +55,11 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request, 'Comment successfully added')
         else:
             # If the form is not valid, return an empty
             # form instance
+            messages.error(request, 'Comment unsuccessful')
             comment_form = CommentForm()
 
         return render(
@@ -67,7 +70,8 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "liked": liked,
-                "comment_form": CommentForm()
+                "comment_form": CommentForm(),
+                "messages": messages
             },
         )
 
