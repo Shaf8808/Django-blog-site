@@ -33,7 +33,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['my-django-blog-application-16029ab1c289.herokuapp.com', '8000-shaf8808-djangoblogsite-cg22q0s7j06.ws-eu100.gitpod.io']
+ALLOWED_HOSTS = ['my-django-blog-application-16029ab1c289.herokuapp.com', '8000-shaf8808-djangoblogsite-cg22q0s7j06.ws-eu100.gitpod.io', '8000-shaf8808-djangoblogsite-dvbxcwj1pfi.ws-eu100.gitpod.io']
 
 
 # Application definition
